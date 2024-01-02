@@ -453,33 +453,12 @@
                     }
                 </style>
                 <script>
-                    function redirectToProfile(numero, nom, prenom) {
-                    // Encode the parameters to make sure special characters are handled properly
-                    var encodedNom = encodeURIComponent(nom);
-                    var encodedPrenom = encodeURIComponent(prenom);
 
-                    window.location.href = "profile.html?selectedNumero=" + numero + "&amp;selectedNom=" + encodedNom + "&amp;selectedPrenom=" + encodedPrenom;
-                    }
                     function logout() {
                     // Ajoutez ici la logique de déconnexion, par exemple, redirigez vers la page de déconnexion
                     window.location.href = "login";
                     }
-                    function Affichage2() {
-                    // Ajoutez ici la logique de déconnexion, par exemple, redirigez vers la page de déconnexion
-                    window.location.href = "affichageS2";
-                    }
-                    function Affichage1() {
-                    // Ajoutez ici la logique de déconnexion, par exemple, redirigez vers la page de déconnexion
-                    window.location.href = "affichageS1";
-                    }
-                    function Liste() {
-                    // Ajoutez ici la logique de déconnexion, par exemple, redirigez vers la page de déconnexion
-                    window.location.href = "ListeEtud";
-                    }
-                    function Bulletin() {
-                    // Ajoutez ici la logique de déconnexion, par exemple, redirigez vers la page de déconnexion
-                    window.location.href = "Bulletin";
-                    }
+
 
                 </script>
             </head>
@@ -494,10 +473,10 @@
 
                     <!-- Ajout des boutons -->
                     <div class="navigation-buttons">
-                        <div class="btn-dash1">
+                        <div class="btn-dash1desactivate">
                             <a href="Liste">Liste Étudiants</a>
                         </div>
-                        <div class="btn-dash2desactivate">
+                        <div class="btn-dash2">
                             <a href="/">Affichage Semestre 1</a>
                         </div>
                         <div class="btn-dash1">
@@ -518,7 +497,7 @@
 
                           <a class="opacity-5 text-dark">Pages / </a>
                       <p></p>
-                      <strong> <span >Affichage</span></strong>
+                      <strong> <span >Liste</span></strong>
 
                       </div>
                        <button id="logout-btn" onclick="logout()">
@@ -532,47 +511,29 @@
 
 
 
-                        <p class="titre"> L'affichage de Semestre 1 </p>
+                        <p class="titre"> Liste d'étudiant </p>
                         <center>
-                        <table border="1">
-                            <xsl:for-each select="etudiants/etudiant">
-                                <tr id="{numero}" onclick="redirectToProfile('{numero}', '{nom}', '{prenom}', '{ginf21}', '{ginf22}', '{ginf23}', '{ginf24}', '{ginf25}', '{ginf26}', '{moyenne}')">
-                                    <td>
-                                        <xsl:if test="position() > 1">
-                                            <xsl:value-of select="position() - 1"/>
-                                        </xsl:if>
-                                    </td>
-                                    <td><xsl:value-of select="numero"/></td>
-                                    <td><xsl:value-of select="nom"/></td>
-                                    <td><xsl:value-of select="prenom"/></td>
-                                    <td><xsl:value-of select="ginf21"/></td>
-                                    <td><xsl:value-of select="ginf22"/></td>
-                                    <td><xsl:value-of select="ginf23"/></td>
-                                    <td><xsl:value-of select="ginf24"/></td>
-                                    <td><xsl:value-of select="ginf25"/></td>
-                                    <td><xsl:value-of select="ginf26"/></td>
-                                    <td>
-                                        <xsl:choose>
-                                            <xsl:when test="moyenne > 12">
-                                                <xsl:attribute name="style">background-color: blue</xsl:attribute>
-                                            </xsl:when>
-                                            <xsl:when test="moyenne &lt;= 12 and moyenne > 8">
-                                                <xsl:attribute name="style">background-color: green</xsl:attribute>
-                                            </xsl:when>
-                                            <xsl:when test="moyenne &lt;= 8">
-                                                <xsl:attribute name="style">background-color: red</xsl:attribute>
-                                            </xsl:when>
-                                        </xsl:choose>
-                                        <xsl:value-of select="moyenne"/>
-                                    </td>
-                                    <xsl:if test="position() > 1">
-                                        <td style="background-color: #f4f4f4">
-                                            Voir profil
+                            <table border="1">
+                                <xsl:for-each select="etudiants/etudiant">
+                                    <tr id="{numero}" onclick="redirectToProfile('{numero}', '{nom}', '{prenom}', '{filiere}', '{date_inscription}')">
+                                        <td>
+                                            <xsl:if test="position() > 1">
+                                                <xsl:value-of select="position() - 1"/>
+                                            </xsl:if>
                                         </td>
-                                    </xsl:if>
-                                </tr>
-                            </xsl:for-each>
-                        </table>
+
+                                        <td><xsl:value-of select="numero"/></td>
+                                        <td><xsl:value-of select="nom"/></td>
+                                        <td><xsl:value-of select="prenom"/></td>
+                                        <td><xsl:value-of select="filiere"/></td>
+                                        <td><xsl:value-of select="date_inscription"/></td>
+
+
+
+                                    </tr>
+                                </xsl:for-each>
+                            </table>
+
                         </center>
                 </div>
                  </div>

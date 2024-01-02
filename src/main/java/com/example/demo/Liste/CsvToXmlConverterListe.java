@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.Liste;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -19,7 +19,7 @@ public class CsvToXmlConverterListe {
             DocumentBuilder documentBuilder = documentFactory.newDocumentBuilder();
             Document document = documentBuilder.newDocument();
 
-            Element studentsElement = document.createElement("students");
+            Element studentsElement = document.createElement("etudiants");
             document.appendChild(studentsElement);
 
             String line;
@@ -33,7 +33,7 @@ public class CsvToXmlConverterListe {
 
                 // Check if the line has the expected number of columns
                 if (columns.length >= 5) {
-                    Element studentElement = document.createElement("student");
+                    Element studentElement = document.createElement("etudiant");
                     studentsElement.appendChild(studentElement);
 
                   addXmlElement(document, studentElement, "numero", columns[0]);

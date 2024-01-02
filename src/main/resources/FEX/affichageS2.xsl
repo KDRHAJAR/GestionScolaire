@@ -497,10 +497,10 @@
                         <div class="btn-dash1">
                             <a href="Liste">Liste Étudiants</a>
                         </div>
-                        <div class="btn-dash2desactivate">
+                        <div class="btn-dash2">
                             <a href="/">Affichage Semestre 1</a>
                         </div>
-                        <div class="btn-dash1">
+                        <div class="btn-dash1desactivate">
                             <a href="Semester2">Affichage Semestre 2</a>
                         </div>
                         <div class="btn-dash2">
@@ -532,7 +532,7 @@
 
 
 
-                        <p class="titre"> L'affichage de Semestre 1 </p>
+                        <p class="titre"> L'affichage de Semestre 2 </p>
                         <center>
                         <table border="1">
                             <xsl:for-each select="etudiants/etudiant">

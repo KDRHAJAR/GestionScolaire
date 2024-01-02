@@ -40,7 +40,7 @@ public class LoginController {
         return mav;
     }
 
-    @PostMapping("/login")
+    @PostMapping("/Login")
     public String login(@ModelAttribute("user") Login user ) {
 
         Login oauthUser = userService.login(user.getUsername(), user.getPassword());
@@ -54,7 +54,7 @@ public class LoginController {
 
 
         } else {
-            return "redirect:/Login";
+            return "redirect:/Liste";
 
 
         }
@@ -75,6 +75,7 @@ public class LoginController {
 
 
         return "redirect:/login";
+
     }
     @PostMapping("/Register")
     public String register(@ModelAttribute("user") Login user) {
@@ -84,7 +85,14 @@ public class LoginController {
         userService.save(user);
 
         // Rediriger vers la page de connexion
-        return "redirect:/Login?registration=success";
+        return "redirect:/login?registration=success";
     }
-
+    @GetMapping("Semester2")
+    public String hajar(Model model){
+        return "affichageS2";
+    }
+    @GetMapping("Liste")
+    public String liste(Model model){
+        return "Liste";
+    }
 }
