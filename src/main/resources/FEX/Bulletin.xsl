@@ -1,4 +1,6 @@
-<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet
+
+        version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:template match="/">
         <html>
@@ -25,7 +27,7 @@
                     padding: 10px 20px;
                     height: 70px;
                     border-radius: 10px;
-                    margin-right: 15x; /* Espacement entre le header et la barre de navigation */
+                    margin-right: 15px; /* Espacement entre le header et la barre de navigation */
                     }
 
 
@@ -83,16 +85,17 @@
                     display: flex;
                     align-items: center;
                     }
-                    .tableint{
+                    .tableint {
                     background-color: #f4f4f4;
                     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
                     display: flex;
-                    margin : 30px 10px 30px 10px;
+                    margin: 30px 20px 30px 30px;
+                    max-width: 500px;
                     align-items: center;
                     padding: 10px 20px;
-
                     border-radius: 10px;
-
+                    flex: 0 0 calc(50% - 20px); /* Occupe 50% de la largeur parente, avec un espace intérieur */
+                    box-sizing: border-box; /* Inclut les bordures et les marges dans le calcul de la largeur */
                     }
 
                     #logout-btn img {
@@ -159,7 +162,11 @@
 
 
 
-
+                    .container {
+                    width: 100%; /* Largeur totale de la page, vous pouvez ajuster selon vos besoins */
+                    display: flex; /* Utilisation de flexbox */
+                    flex-wrap: wrap; /* Permet le retour à la ligne des éléments */
+                    }
 
 
 
@@ -481,6 +488,8 @@
                     window.location.href = "Bulletin";
                     }
 
+
+
                 </script>
             </head>
             <body>
@@ -498,13 +507,16 @@
                             <a href="Liste">Liste Étudiants</a>
                         </div>
                         <div class="btn-dash2">
-                            <a href="/">Affichage Semestre 1</a>
+                            <a href="Semester1">Affichage Semestre 1</a>
                         </div>
-                        <div class="btn-dash1desactivate">
+                        <div class="btn-dash1">
                             <a href="Semester2">Affichage Semestre 2</a>
                         </div>
-                        <div class="btn-dash2">
-                            <a href="login">Affichage Bulletin</a>
+                        <div class="btn-dash2desactivate">
+                            <a href="Bulletin">Affichage Bulletin</a>
+                        </div>
+                        <div class="btn-dash1">
+                            <a href="/Module">Notes des élèves</a>
                         </div>
                     </div>
 
@@ -518,7 +530,7 @@
 
                           <a class="opacity-5 text-dark">Pages / </a>
                       <p></p>
-                      <strong> <span >Affichage</span></strong>
+                      <strong> <span >Bulletin Etudiant </span></strong>
 
                       </div>
                        <button id="logout-btn" onclick="logout()">
@@ -527,55 +539,125 @@
                   </header>
 
 
-                  <div class="tableint">
-                     <div class="container">
 
 
 
-                        <p class="titre"> L'affichage de Semestre 2 </p>
-                        <center>
-                        <table border="1">
-                            <xsl:for-each select="etudiants/etudiant">
-                                <tr id="{numero}" onclick="redirectToProfile('{numero}', '{nom}', '{prenom}', '{ginf21}', '{ginf22}', '{ginf23}', '{ginf24}', '{ginf25}', '{ginf26}', '{moyenne}')">
-                                    <td>
-                                        <xsl:if test="position() > 1">
-                                            <xsl:value-of select="position() - 1"/>
-                                        </xsl:if>
-                                    </td>
-                                    <td><xsl:value-of select="numero"/></td>
-                                    <td><xsl:value-of select="nom"/></td>
-                                    <td><xsl:value-of select="prenom"/></td>
-                                    <td><xsl:value-of select="ginf21"/></td>
-                                    <td><xsl:value-of select="ginf22"/></td>
-                                    <td><xsl:value-of select="ginf23"/></td>
-                                    <td><xsl:value-of select="ginf24"/></td>
-                                    <td><xsl:value-of select="ginf25"/></td>
-                                    <td><xsl:value-of select="ginf26"/></td>
-                                    <td>
-                                        <xsl:choose>
-                                            <xsl:when test="moyenne > 12">
-                                                <xsl:attribute name="style">background-color: blue</xsl:attribute>
-                                            </xsl:when>
-                                            <xsl:when test="moyenne &lt;= 12 and moyenne > 8">
-                                                <xsl:attribute name="style">background-color: green</xsl:attribute>
-                                            </xsl:when>
-                                            <xsl:when test="moyenne &lt;= 8">
-                                                <xsl:attribute name="style">background-color: red</xsl:attribute>
-                                            </xsl:when>
-                                        </xsl:choose>
-                                        <xsl:value-of select="moyenne"/>
-                                    </td>
-                                    <xsl:if test="position() > 1">
-                                        <td style="background-color: #f4f4f4">
-                                            Voir profil
-                                        </td>
-                                    </xsl:if>
-                                </tr>
-                            </xsl:for-each>
-                        </table>
-                        </center>
-                </div>
-                 </div>
+
+                      <div class="container">
+                             <xsl:for-each select="bulletin/etudiant">
+                                 <!-- Set unique id for the row -->
+                                 <div class="tableint">
+
+                                 <center>
+                                 <p class="titre">Etudiant  : <xsl:value-of select="Nom"/> <xsl:value-of select="Prénom"/></p>
+
+
+
+                                         <table border="1">
+                                             <tr id="{position()}" onclick="redirectToProfile('{nom}', '{prenom}', '{administration}', '{optimisation}', '{xml}', '{java}', '{Add_System}', '{progsystem}', '{uml}', '{IHM}', '{MOYENNE}')">
+                                                 <!-- Display student information -->
+
+
+                                                 <!-- Module: Programation -->
+
+                                             <th><strong>Module Programation</strong></th>
+
+                                         <tr>
+                                             <td>Xml</td>
+                                             <td><xsl:value-of select="xml"/></td>
+                                         </tr>
+                                         <tr>
+                                             <td>java</td>
+                                             <td><xsl:value-of select="java"/></td>
+                                         </tr>
+                                         <tr>
+                                             <td>Total</td>
+
+                                             <td><xsl:value-of select="(xml + java) div 2"/></td>
+                                         </tr>
+
+                                         <!-- Module: Base donnée -->
+
+                                             <th><strong>Module Base donnée</strong></th>
+
+                                         <tr>
+                                             <td>administration</td>
+                                             <td><xsl:value-of select="administration"/></td>
+                                         </tr>
+                                         <tr>
+                                             <td>optimisation</td>
+                                             <td><xsl:value-of select="optimisation"/></td>
+                                         </tr>
+                                         <tr>
+                                             <td>Total</td>
+                                             <td><xsl:value-of select="(administration + optimisation) div 2"/></td>
+                                         </tr>
+
+                                         <!-- Module: Système -->
+
+                                             <th><strong>Module Système</strong></th>
+
+                                         <tr>
+                                             <td>administration</td>
+                                             <td><xsl:value-of select="Add_System"/></td>
+                                         </tr>
+                                         <tr>
+                                             <td>optimisation</td>
+                                             <td><xsl:value-of select="progsystem"/></td>
+                                         </tr>
+                                         <tr>
+                                             <td>Total</td>
+                                             <td><xsl:value-of select="(Add_System + progsystem) div 2"/></td>
+                                         </tr>
+
+                                         <!-- Module: Conception -->
+
+                                             <th><strong>Module de Conception</strong></th>
+
+                                         <tr>
+                                             <td>Uml</td>
+                                             <td><xsl:value-of select="uml"/></td>
+                                         </tr>
+                                         <tr>
+                                             <td>IHM</td>
+                                             <td><xsl:value-of select="IHM"/></td>
+                                         </tr>
+                                         <tr>
+                                             <td>Total</td>
+                                             <td><xsl:value-of select="(uml + IHM) div 2"/></td>
+                                         </tr>
+
+                                         <!-- Display Moyenne -->
+                                                 <tr>
+                                                     <td>Moyenne General</td>
+                                                     <xsl:variable name="moyenne" select="MOYENNE"/>
+                                                     <!-- Utilisation de xsl:attribute pour définir le style de fond en fonction de la valeur -->
+                                                     <td>
+                                                         <xsl:attribute name="style">
+                                                             <xsl:choose>
+                                                                 <!-- Si la moyenne est supérieure à 12, appliquer une couleur de fond verte -->
+                                                                 <xsl:when test="$moyenne > 11">background-color: green;</xsl:when>
+                                                                 <!-- Sinon, appliquer une couleur de fond rouge -->
+                                                                 <xsl:otherwise>background-color: red;</xsl:otherwise>
+                                                             </xsl:choose>
+                                                         </xsl:attribute>
+                                                         <xsl:value-of select="$moyenne"/>
+                                                     </td>
+                                                 </tr>
+
+
+
+                                     </tr>
+                                 </table>
+                         </center>
+
+                  </div>
+                             </xsl:for-each>
+                  </div>
+
+
+
+
 
 
 

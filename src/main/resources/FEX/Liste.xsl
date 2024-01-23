@@ -477,13 +477,16 @@
                             <a href="Liste">Liste Étudiants</a>
                         </div>
                         <div class="btn-dash2">
-                            <a href="/">Affichage Semestre 1</a>
+                            <a href="Semester1">Affichage Semestre 1</a>
                         </div>
                         <div class="btn-dash1">
                             <a href="Semester2">Affichage Semestre 2</a>
                         </div>
                         <div class="btn-dash2">
-                            <a href="login">Affichage Bulletin</a>
+                            <a href="Bulletin">Affichage Bulletin</a>
+                        </div>
+                        <div class="btn-dash1">
+                            <a href="/Module">Notes des élèves</a>
                         </div>
                     </div>
 
@@ -533,6 +536,11 @@
                                     </tr>
                                 </xsl:for-each>
                             </table>
+                            <div style="margin-top: 20px; height: 100px;"> <!-- Ajoutez la propriété style avec height pour spécifier la hauteur en pixels -->
+                                <form method="post" action="/generatePdfliste">
+                                    <input value="Generer PDF" type="submit" id="logout-btn"  ></input>
+                                </form>
+                            </div>
 
                         </center>
                 </div>

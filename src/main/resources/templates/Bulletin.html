@@ -1,0 +1,3994 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<style>
+                    body {
+                    font-family: 'Arial', sans-serif;
+                    background-color: #ffffff;
+                    margin: 0;
+                    padding: 0;
+                    }
+
+                    .dashboard {
+                    display: flex;
+                    height: 100vh;
+                    }
+
+                    header {
+                    background-color: #f4f4f4;
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 20px;
+                    height: 70px;
+                    border-radius: 10px;
+                    margin-right: 15px; /* Espacement entre le header et la barre de navigation */
+                    }
+
+
+                    .navigation {
+                    display: flex;
+                    flex-direction: column;
+                    background-color: #ffffff;
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                    padding: 20px;
+                    border-radius: 10px;
+                    width: 180px;
+                    }
+
+                    .nav-link {
+                    color: #fff;
+                    text-decoration: none;
+                    margin-bottom: 10px;
+                    }
+
+
+                    .logo-container {
+                    align-items: center;
+                    display: flex;
+
+
+                    }
+
+                    .logo {
+                    max-width: 100px;
+                    height: auto;
+                    margin-right: 10px;
+                    border-radius: 15%;
+                    }
+
+                    h2 {
+                    color: #000033;
+                    font-size: 1.5em;
+                    margin: 0;
+                    }
+
+                    .titre {
+                    color: #000033;
+                    font-size: 1em;
+                    margin-top: 20px;
+                    font-weight: 700; /* Ajoutez le poids de la police que vous souhaitez utiliser, par exemple 700 pour le gras */
+                    }
+
+                    #logout-btn {
+                    background-color: #000033;
+                    color: #ffffff;
+                    padding: 10px 15px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    }
+                    .tableint {
+                    background-color: #f4f4f4;
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                    display: flex;
+                    margin: 30px 20px 30px 30px;
+                    max-width: 500px;
+                    align-items: center;
+                    padding: 10px 20px;
+                    border-radius: 10px;
+                    flex: 0 0 calc(50% - 20px); /* Occupe 50% de la largeur parente, avec un espace intérieur */
+                    box-sizing: border-box; /* Inclut les bordures et les marges dans le calcul de la largeur */
+                    }
+
+                    #logout-btn img {
+                    max-width: 20px;
+                    height: auto;
+                    margin-right: 5px;
+                    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Ajout de l'ombre uniquement à l'image */
+
+                    }
+                    .contenue {
+                    margin-left: 15px;
+                    }
+
+                    .containerr {
+                    margin: 0 auto;
+                    max-width: 1200px; /* ou une autre largeur selon vos besoins */
+                    align-items: center;
+                    }
+
+                    .containerr-fluid {
+                    margin: 0;
+                    padding: 0;
+                    }
+
+
+
+                    img.logo {
+                    max-width: 80px;
+                    height: auto;
+                    margin-right: 5px;
+                    border-radius: 15%;
+                    }
+
+                    center {
+                    margin-top: 20px;
+                    }
+
+
+                    table {
+                    width: 100%;
+                    border-collapse: collapse;
+                    margin-top: 20px;
+                    }
+
+                    th, td {
+                    padding: 10px;
+                    text-align: left;
+                    }
+
+                    th {
+                    background-color: #333;
+                    color: #fff;
+                    }
+
+                    tr:nth-child(even) {
+                    background-color: #f9f9f9;
+                    }
+
+                    tr:hover {
+                    background-color: #ddd;
+                    cursor: pointer;
+                    }
+
+
+
+
+                    .container {
+                    width: 100%; /* Largeur totale de la page, vous pouvez ajuster selon vos besoins */
+                    display: flex; /* Utilisation de flexbox */
+                    flex-wrap: wrap; /* Permet le retour à la ligne des éléments */
+                    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                    .site-footer
+                    {
+                    background-color:#f4f4f4;
+                    padding:45px 0 20px;
+                    font-size:15px;
+                    line-height:24px;
+                    color:#737373;
+                    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1);
+                    }
+                    .site-footer hr
+                    {
+                    border-top-color:#bbb;
+                    opacity:0.5
+                    }
+                    .site-footer hr.small
+                    {
+                    margin:20px 0
+                    }
+                    .site-footer h6
+                    {
+                    color:black;
+                    font-size:16px;
+                    text-transform:uppercase;
+                    margin-top:5px;
+                    letter-spacing:2px
+                    }
+                    .site-footer a
+                    {
+                    color:#737373;
+                    }
+                    .site-footer a:hover
+                    {
+                    color:#3366cc;
+                    text-decoration:none;
+                    }
+                    .footer-links
+                    {
+                    padding-left:0;
+                    list-style:none
+                    }
+                    .footer-links li
+                    {
+                    display:block
+                    }
+                    .footer-links a
+                    {
+                    color:#737373
+                    }
+                    .footer-links a:active,.footer-links a:focus,.footer-links a:hover
+                    {
+                    color:#3366cc;
+                    text-decoration:none;
+                    }
+                    .footer-links.inline li
+                    {
+                    display:inline-block
+                    }
+                    .site-footer .social-icons
+                    {
+                    text-align:right
+                    }
+                    .site-footer .social-icons a
+                    {
+                    width:40px;
+                    height:40px;
+                    line-height:40px;
+                    margin-left:6px;
+                    margin-right:0;
+                    border-radius:100%;
+                    background-color:#33353d
+                    }
+                    .copyright-text
+                    {
+                    margin:0
+                    }
+                    @media (max-width:991px)
+                    {
+                    .site-footer [class^=col-]
+                    {
+                    margin-bottom:30px
+                    }
+                    }
+                    @media (max-width:767px)
+                    {
+                    .site-footer
+                    {
+                    padding-bottom:0
+                    }
+                    .site-footer .copyright-text,.site-footer .social-icons
+                    {
+                    text-align:center
+                    }
+                    }
+                    .social-icons
+                    {
+                    padding-left:0;
+                    margin-bottom:0;
+                    list-style:none
+                    }
+                    .social-icons li
+                    {
+                    display:inline-block;
+                    margin-bottom:4px
+                    }
+                    .social-icons li.title
+                    {
+                    margin-right:15px;
+                    text-transform:uppercase;
+                    color:#96a2b2;
+                    font-weight:700;
+                    font-size:13px
+                    }
+                    .social-icons a{
+                    background-color:#eceeef;
+                    color:#818a91;
+                    font-size:16px;
+                    display:inline-block;
+                    line-height:44px;
+                    width:44px;
+                    height:44px;
+                    text-align:center;
+                    margin-right:8px;
+                    border-radius:100%;
+                    -webkit-transition:all .2s linear;
+                    -o-transition:all .2s linear;
+                    transition:all .2s linear
+                    }
+                    .social-icons a:active,.social-icons a:focus,.social-icons a:hover
+                    {
+                    color:#fff;
+                    background-color:#29aafe
+                    }
+                    .social-icons.size-sm a
+                    {
+                    line-height:34px;
+                    height:34px;
+                    width:34px;
+                    font-size:14px
+                    }
+                    .social-icons a.facebook:hover
+                    {
+                    background-color:#3b5998
+                    }
+                    .social-icons a.twitter:hover
+                    {
+                    background-color:#00aced
+                    }
+                    .social-icons a.linkedin:hover
+                    {
+                    background-color:#007bb6
+                    }
+                    .social-icons a.dribbble:hover
+                    {
+                    background-color:#ea4c89
+                    }
+                    @media (max-width:767px)
+                    {
+                    .social-icons li.title
+                    {
+                    display:block;
+                    margin-right:0;
+                    font-weight:600
+                    }
+                    }
+                    .row {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-right: -15px;
+                    margin-left: -1px;
+                    }
+
+                    /* Style de la classe "col" */
+                    .col {
+                    flex-basis: 0;
+                    flex-grow: 1;
+                    max-width: 100%;
+                    padding-right: 15px;
+                    padding-left: 15px;
+
+                    }
+                    span {
+                    color: #002533;
+                    font-size: 1em;
+                    margin-top: 0; /* Ajustez l'espace en haut du texte selon vos préférences */
+                    font-weight: 600;
+                    font-family: system-ui;
+                    }
+                    .navigation-buttons {
+                    margin-top: 70px; /* Ajoutez la marge en haut selon vos besoins */
+                    /* Autres styles si nécessaire */
+                    }
+                    .btn-dash1 {
+                    background-color: #f4f4f4;
+                    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 20px;
+                    height: 20px;
+                    width: 140px;
+                    border-radius: 5px;
+                    margin-right: 15px;
+                    margin-bottom: 20px;
+                    color: #002533;
+                    font-size: 0.9em;
+
+                    font-weight: 600;
+                    font-family: system-ui;
+                    }
+
+
+
+                    .btn-dash2 {
+                    background-color: #ffffff;
+                    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1); /* Modification ici */
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 20px;
+                    height: 20px;
+                    width: 140px; /* Correction ici */
+                    border-radius: 5px;
+                    margin-right: 15px;
+                    margin-bottom: 20px;
+                    color: #002533;
+                    font-size: 0.9em;
+
+                    font-weight: 600;
+                    font-family: system-ui;
+                    }
+
+                    .btn-dash2desactivate {
+                    background-color: #ffffff;
+
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 20px;
+                    height: 20px;
+                    width: 140px; /* Correction ici */
+                    border-radius: 5px;
+                    margin-right: 15px;
+                    margin-bottom: 20px;
+                    color: #002533;
+                    font-size: 0.9em;
+
+                    font-weight: 600;
+                    font-family: system-ui;
+                    }
+                    .btn-dash1desactivate {
+                    background-color: #f4f4f4;
+
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    padding: 10px 20px;
+                    height: 20px;
+                    width: 140px;
+                    border-radius: 5px;
+                    margin-right: 15px;
+                    margin-bottom: 20px;
+                    color: #002533;
+                    font-size: 0.9em;
+
+                    font-weight: 600;
+                    font-family: system-ui;
+                    }
+
+                    .btn-dash1, .btn-dash2 ,.btn-dash2desactivate a,.btn-dash1desactivate a {
+                    text-align: left;
+                    }
+
+                    .btn-dash1 a, .btn-dash2 a,.btn-dash2desactivate a ,.btn-dash1desactivate a{
+                    text-decoration: none;
+                    color: #000000; /* Couleur du texte, ajustez selon vos besoins */
+                    }
+                </style>
+<script>
+                    function redirectToProfile(numero, nom, prenom) {
+                    // Encode the parameters to make sure special characters are handled properly
+                    var encodedNom = encodeURIComponent(nom);
+                    var encodedPrenom = encodeURIComponent(prenom);
+
+                    window.location.href = "profile.html?selectedNumero=" + numero + "&selectedNom=" + encodedNom + "&selectedPrenom=" + encodedPrenom;
+                    }
+                    function logout() {
+                    // Ajoutez ici la logique de déconnexion, par exemple, redirigez vers la page de déconnexion
+                    window.location.href = "login";
+                    }
+                    function Affichage2() {
+                    // Ajoutez ici la logique de déconnexion, par exemple, redirigez vers la page de déconnexion
+                    window.location.href = "affichageS2";
+                    }
+                    function Affichage1() {
+                    // Ajoutez ici la logique de déconnexion, par exemple, redirigez vers la page de déconnexion
+                    window.location.href = "affichageS1";
+                    }
+                    function Liste() {
+                    // Ajoutez ici la logique de déconnexion, par exemple, redirigez vers la page de déconnexion
+                    window.location.href = "ListeEtud";
+                    }
+                    function Bulletin() {
+                    // Ajoutez ici la logique de déconnexion, par exemple, redirigez vers la page de déconnexion
+                    window.location.href = "Bulletin";
+                    }
+
+
+
+                </script>
+</head>
+<body>
+<div style="display: flex;" class="dashboard-container">
+<aside class="navigation">
+<div class="logo-container">
+<img alt="Logo" src="images/Ensa.png" class="logo"><span>ENSAT</span>
+</div>
+<div class="navigation-buttons">
+<div class="btn-dash1">
+<a href="Liste">Liste &Eacute;tudiants</a>
+</div>
+<div class="btn-dash2">
+<a href="Semester1">Affichage Semestre 1</a>
+</div>
+<div class="btn-dash1">
+<a href="Semester2">Affichage Semestre 2</a>
+</div>
+<div class="btn-dash2desactivate">
+<a href="Bulletin">Affichage Bulletin</a>
+</div>
+<div class="btn-dash1">
+<a href="/Module">Notes des &eacute;l&egrave;ves</a>
+</div>
+</div>
+</aside>
+<main style="flex: 1;" class="main-content">
+<div class="contenue">
+<header>
+<div class="logo-container">
+<a class="opacity-5 text-dark">Pages / </a>
+<p></p>
+<strong><span>Bulletin Etudiant </span></strong>
+</div>
+<button onclick="logout()" id="logout-btn">
+                         Logout
+                       </button>
+</header>
+<div class="container">
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : ABETIOUSOFIANE</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0')" id="1">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : ACHERNANMOHAMED</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '6.0', '5.0', '6.0', '9.0', '9.0', '6.0', '9.0', '6.0', '6.0')" id="2">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>6.0</td>
+</tr>
+<tr>
+<td>java</td><td>9.0</td>
+</tr>
+<tr>
+<td>Total</td><td>7.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>6.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>5.0</td>
+</tr>
+<tr>
+<td>Total</td><td>5.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>9.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>6.0</td>
+</tr>
+<tr>
+<td>Total</td><td>7.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>9.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>6.0</td>
+</tr>
+<tr>
+<td>Total</td><td>7.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: red;">6.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : AFOUDHIND</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0')" id="3">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : AIT OUKHADOUSELMA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0')" id="4">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : AKIIRNEAMAL</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '9.0', '12.0', '9.0', '12.0', '9.0', '12.0', '9.0', '12.0')" id="5">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>9.0</td>
+</tr>
+<tr>
+<td>Total</td><td>10.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>9.0</td>
+</tr>
+<tr>
+<td>Total</td><td>10.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>9.0</td>
+</tr>
+<tr>
+<td>Total</td><td>10.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>9.0</td>
+</tr>
+<tr>
+<td>Total</td><td>10.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : AMHAOUECHWIAM</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0')" id="6">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : AMINETAHA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '17.0', '13.0', '17.0', '13.0', '17.0', '13.0', '17.0', '13.0', '17.0')" id="7">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>17.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>15</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>17.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>15</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>17.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>15</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>17.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>15</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">17.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : ARRABHAFSA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '11.0', '13.0', '11.0', '13.0', '11.0', '13.0', '11.0', '13.0', '11.0')" id="8">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>11.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>11.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>11.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>11.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: red;">11.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : BAJJIAMINE</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '16.0', '14.0', '16.0', '14.0', '16.0', '14.0', '16.0', '14.0', '16.0')" id="9">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>16.0</td>
+</tr>
+<tr>
+<td>java</td><td>14.0</td>
+</tr>
+<tr>
+<td>Total</td><td>15</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>16.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>14.0</td>
+</tr>
+<tr>
+<td>Total</td><td>15</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>16.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>14.0</td>
+</tr>
+<tr>
+<td>Total</td><td>15</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>16.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>14.0</td>
+</tr>
+<tr>
+<td>Total</td><td>15</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">16.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : BENAMRIAYMANE</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0')" id="10">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : BENATTOUIHSANE</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0')" id="11">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : BENATTOUIMANE</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0')" id="12">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : BENTOUFILEOUSSAMA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0')" id="13">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : BOUALIMAROUA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0')" id="14">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : BOUKTAIBSOUFIAN</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '16.0', '5.0', '16.0', '5.0', '16.0', '5.0', '16.0', '5.0', '16.0')" id="15">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>16.0</td>
+</tr>
+<tr>
+<td>java</td><td>5.0</td>
+</tr>
+<tr>
+<td>Total</td><td>10.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>16.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>5.0</td>
+</tr>
+<tr>
+<td>Total</td><td>10.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>16.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>5.0</td>
+</tr>
+<tr>
+<td>Total</td><td>10.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>16.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>5.0</td>
+</tr>
+<tr>
+<td>Total</td><td>10.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">16.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : BOULAIDSARA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '10.0', '13.0', '10.0', '13.0', '10.0', '13.0', '10.0', '13.0', '10.0')" id="16">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>10.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>11.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>10.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>11.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>10.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>11.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>10.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>11.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: red;">10.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : CHANAAAIMANE</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0')" id="17">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : CHATTANAS</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '13.0', '13.0', '13.0', '13.0', '13.0', '13.0', '13.0', '13.0', '13.0')" id="18">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>13.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>13</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>13.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>13</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>13.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>13</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>13.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>13</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">13.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : DAHRABOUDOHA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '13.0', '10.0', '13.0', '10.0', '13.0', '10.0', '13.0', '10.0', '13.0')" id="19">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>13.0</td>
+</tr>
+<tr>
+<td>java</td><td>10.0</td>
+</tr>
+<tr>
+<td>Total</td><td>11.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>13.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>10.0</td>
+</tr>
+<tr>
+<td>Total</td><td>11.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>13.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>10.0</td>
+</tr>
+<tr>
+<td>Total</td><td>11.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>13.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>10.0</td>
+</tr>
+<tr>
+<td>Total</td><td>11.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">13.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : DAOUDIAYA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0')" id="20">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : ECHBERAALANASS</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0')" id="21">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL AALOUCHMOHAMMED YASSINE</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '16.0', '13.0', '16.0', '13.0', '16.0', '13.0', '16.0', '13.0', '16.0')" id="22">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>16.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>14.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>16.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>14.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>16.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>14.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>16.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>14.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">16.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL ASSIRIAHLAM</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0')" id="23">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL AZOUANAYA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0')" id="24">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL BAGHDADINADA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '19.0', '13.0', '19.0', '13.0', '19.0', '13.0', '19.0', '13.0', '19.0')" id="25">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>19.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>16</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>19.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>16</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>19.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>16</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>19.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>16</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">19.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL BARAKANOUHAILA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '2.0', '12.0', '2.0', '12.0', '2.0', '12.0', '2.0', '12.0')" id="26">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>2.0</td>
+</tr>
+<tr>
+<td>Total</td><td>7</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>2.0</td>
+</tr>
+<tr>
+<td>Total</td><td>7</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>2.0</td>
+</tr>
+<tr>
+<td>Total</td><td>7</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>2.0</td>
+</tr>
+<tr>
+<td>Total</td><td>7</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL FERCHOUNISOUKAYNA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '14.0', '12.0', '14.0', '12.0', '14.0', '12.0', '14.0', '12.0')" id="27">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>14.0</td>
+</tr>
+<tr>
+<td>Total</td><td>13</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>14.0</td>
+</tr>
+<tr>
+<td>Total</td><td>13</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>14.0</td>
+</tr>
+<tr>
+<td>Total</td><td>13</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>14.0</td>
+</tr>
+<tr>
+<td>Total</td><td>13</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL FICHRIHAB</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '11.0', '12.0', '11.0', '12.0', '11.0', '12.0', '11.0', '12.0')" id="28">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>11.0</td>
+</tr>
+<tr>
+<td>Total</td><td>11.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>11.0</td>
+</tr>
+<tr>
+<td>Total</td><td>11.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>11.0</td>
+</tr>
+<tr>
+<td>Total</td><td>11.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>11.0</td>
+</tr>
+<tr>
+<td>Total</td><td>11.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL GAIDMUSTAPHA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '17.0', '12.0', '17.0', '12.0', '17.0', '12.0', '17.0', '12.0')" id="29">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>17.0</td>
+</tr>
+<tr>
+<td>Total</td><td>14.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>17.0</td>
+</tr>
+<tr>
+<td>Total</td><td>14.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>17.0</td>
+</tr>
+<tr>
+<td>Total</td><td>14.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>17.0</td>
+</tr>
+<tr>
+<td>Total</td><td>14.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL HABTINAJOUA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '15.0', '12.0', '15.0', '12.0', '15.0', '12.0', '15.0', '12.0')" id="30">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>15.0</td>
+</tr>
+<tr>
+<td>Total</td><td>13.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>15.0</td>
+</tr>
+<tr>
+<td>Total</td><td>13.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>15.0</td>
+</tr>
+<tr>
+<td>Total</td><td>13.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>15.0</td>
+</tr>
+<tr>
+<td>Total</td><td>13.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL HADDADMOHAMED</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '11.0', '12.0', '11.0', '12.0', '11.0', '12.0', '11.0', '12.0')" id="31">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>11.0</td>
+</tr>
+<tr>
+<td>Total</td><td>11.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>11.0</td>
+</tr>
+<tr>
+<td>Total</td><td>11.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>11.0</td>
+</tr>
+<tr>
+<td>Total</td><td>11.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>11.0</td>
+</tr>
+<tr>
+<td>Total</td><td>11.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL HARIRIKENZA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0', '13.0', '12.0')" id="32">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>13.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12.5</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL HARRACHYABDERRAHMANE</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '14.0', '12.0', '14.0', '12.0', '14.0', '12.0', '14.0', '12.0')" id="33">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>14.0</td>
+</tr>
+<tr>
+<td>Total</td><td>13</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>14.0</td>
+</tr>
+<tr>
+<td>Total</td><td>13</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>14.0</td>
+</tr>
+<tr>
+<td>Total</td><td>13</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>14.0</td>
+</tr>
+<tr>
+<td>Total</td><td>13</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL MAFTOUHIBILAL</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="34">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL MAIMOUNIMOHAMED AMINE</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="35">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL MOUMOUHIHOUDA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="36">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL OMARIIMANE</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="37">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL YAMLAHIAICHA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="38">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : EL YAZGHIMARYEM</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="39">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : ENNAJARIOUMAIMA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="40">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : ESSAIHASMAE</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="41">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : FAROUKZAKARIA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="42">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : GLIOUALYASSINE</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="43">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : GOMAIRIHAMZA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="44">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : HAJIOTMANE</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="45">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : HAMDANKARIMA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="46">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : HARRAKYOUSSEF</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="47">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : HAYAOUIMOUAD</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="48">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : HIMMIHAJAR</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="49">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : IDRISSIYASSINE</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="50">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : JAADAZAHAIRA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="51">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : KACHARNABIL</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="52">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : KDIDARHAJAR</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="53">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : KEFFAOUINOHA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="54">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : KHALLOUFIAYA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="55">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : LAABADIHOUDA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="56">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : LAHOIENIABDERRAHIM</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="57">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : LAKRAMATHASNAE</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="58">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : MOUNTASSIRREDA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="59">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : NAYMAOMAYMA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="60">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : RANBOUKLAMIAE</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="61">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : RAYESABDELKOUDOUS</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="62">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : SAMADIIMAD</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="63">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : ZAOUIOUSSAMA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="64">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+<div class="tableint">
+<center>
+<p class="titre">Etudiant  : ZOUAKIMARIA</p>
+<table border="1">
+<tr onclick="redirectToProfile('', '', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0', '12.0')" id="65">
+<th><strong>Module Programation</strong></th>
+<tr>
+<td>Xml</td><td>12.0</td>
+</tr>
+<tr>
+<td>java</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Base donn&eacute;e</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module Syst&egrave;me</strong></th>
+<tr>
+<td>administration</td><td>12.0</td>
+</tr>
+<tr>
+<td>optimisation</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<th><strong>Module de Conception</strong></th>
+<tr>
+<td>Uml</td><td>12.0</td>
+</tr>
+<tr>
+<td>IHM</td><td>12.0</td>
+</tr>
+<tr>
+<td>Total</td><td>12</td>
+</tr>
+<tr>
+<td>Moyenne General</td><td style="background-color: green;">12.0</td>
+</tr>
+</tr>
+</table>
+</center>
+</div>
+</div>
+<footer class="site-footer">
+<div class="container">
+<div class="row">
+<div class="col">
+<h6>About</h6>
+<p class="text-justify">L'ENSA de Tanger, <i>&Eacute;cole Nationale des Sciences Appliqu&eacute;es de Tanger</i>, est une institution acad&eacute;mique qui se consacre &agrave; l'enseignement des sciences appliqu&eacute;es.</p>
+</div>
+<div class="col">
+<h6>Categories</h6>
+<ul class="footer-links">
+<li>
+<a href="http://scanfcode.com/category/c-language/">C</a>
+</li>
+<li>
+<a href="http://scanfcode.com/category/front-end-development/">UI Design</a>
+</li>
+<li>
+<a href="http://scanfcode.com/category/back-end-development/">PHP</a>
+</li>
+<li>
+<a href="http://scanfcode.com/category/java-programming-language/">Java</a>
+</li>
+<li>
+<a href="http://scanfcode.com/category/android/">Android</a>
+</li>
+<li>
+<a href="http://scanfcode.com/category/templates/">Templates</a>
+</li>
+</ul>
+</div>
+<div class="col">
+<h6>Quick Links</h6>
+<ul class="footer-links">
+<li>
+<a href="http://scanfcode.com/about/">About Us</a>
+</li>
+<li>
+<a href="http://scanfcode.com/contact/">Contact Us</a>
+</li>
+<li>
+<a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a>
+</li>
+<li>
+<a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a>
+</li>
+<li>
+<a href="http://scanfcode.com/sitemap/">Sitemap</a>
+</li>
+</ul>
+</div>
+<div class="col">
+<img src="images/Ensa.png" classe="image"></div>
+</div>
+<hr>
+</div>
+<div class="container">
+<div class="row">
+<div class="col">
+<p class="copyright-text">Copyrigh; 2017 All Rights Reserved by
+                                          <a href="#">Scanfcode</a>.
+                                      </p>
+</div>
+<div class="col">
+<ul class="social-icons">
+<li>
+<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
+</li>
+<li>
+<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+</li>
+<li>
+<a href="#" class="dribbble"><i class="fa fa-dribbble"></i></a>
+</li>
+<li>
+<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</main>
+</div>
+</body>
+</html>

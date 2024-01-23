@@ -498,13 +498,16 @@
                             <a href="Liste">Liste Étudiants</a>
                         </div>
                         <div class="btn-dash2desactivate">
-                            <a href="/">Affichage Semestre 1</a>
+                            <a href="Semester1">Affichage Semestre 1</a>
                         </div>
                         <div class="btn-dash1">
                             <a href="Semester2">Affichage Semestre 2</a>
                         </div>
                         <div class="btn-dash2">
-                            <a href="login">Affichage Bulletin</a>
+                            <a href="Bulletin">Affichage Bulletin</a>
+                        </div>
+                        <div class="btn-dash1">
+                            <a href="/Module">Notes des élèves</a>
                         </div>
                     </div>
 

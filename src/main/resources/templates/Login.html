@@ -108,7 +108,7 @@
     <div class="login-image"></div>
     <div class="login-content">
         <h2>Ensat Login</h2>
-        <form action="#" th:action="@{/Login}" th:object="${user}" method="post">
+        <form action="#" th:action="@{/login}" th:object="${user}" method="post">
             <div class="form-group">
                 <label for="username">Username</label>
                 <input type="text" id="username" th:field="*{username}" class="form-control" />

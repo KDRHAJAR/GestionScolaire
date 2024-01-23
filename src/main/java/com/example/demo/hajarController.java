@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class hajarController {
-    @GetMapping("/")
+    @GetMapping("/hajar")
     public String hajar(Model model){
-        return "affichageS1";
+        return "hajar";
     }
 
 }

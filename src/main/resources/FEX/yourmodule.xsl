@@ -497,14 +497,17 @@
                         <div class="btn-dash1">
                             <a href="Liste">Liste Étudiants</a>
                         </div>
-                        <div class="btn-dash2desactivate">
-                            <a href="/">Affichage Semestre 1</a>
+                        <div class="btn-dash2">
+                            <a href="Semester1">Affichage Semestre 1</a>
                         </div>
                         <div class="btn-dash1">
                             <a href="Semester2">Affichage Semestre 2</a>
                         </div>
                         <div class="btn-dash2">
                             <a href="Bulletin">Affichage Bulletin</a>
+                        </div>
+                        <div class="btn-dash1desactivate">
+                            <a href="/Module">Notes des élèves</a>
                         </div>
                     </div>
 
@@ -532,49 +535,39 @@
 
 
 
-                        <p class="titre"> L'affichage de Semestre 1 </p>
-                        <center>
-                        <table border="1">
-                            <xsl:for-each select="etudiants/etudiant">
-                                <tr id="{numero}" onclick="redirectToProfile('{numero}', '{nom}', '{prenom}', '{ginf21}', '{ginf22}', '{ginf23}', '{ginf24}', '{ginf25}', '{ginf26}', '{moyenne}')">
-                                    <td>
-                                        <xsl:if test="position() > 1">
-                                            <xsl:value-of select="position() - 1"/>
-                                        </xsl:if>
-                                    </td>
-                                    <td><xsl:value-of select="numero"/></td>
-                                    <td><xsl:value-of select="nom"/></td>
-                                    <td><xsl:value-of select="prenom"/></td>
-                                    <td><xsl:value-of select="ginf21"/></td>
-                                    <td><xsl:value-of select="ginf22"/></td>
-                                    <td><xsl:value-of select="ginf23"/></td>
-                                    <td><xsl:value-of select="ginf24"/></td>
-                                    <td><xsl:value-of select="ginf25"/></td>
-                                    <td><xsl:value-of select="ginf26"/></td>
-                                    <td>
-                                        <xsl:choose>
-                                            <xsl:when test="moyenne > 12">
-                                                <xsl:attribute name="style">background-color: blue</xsl:attribute>
-                                            </xsl:when>
-                                            <xsl:when test="moyenne &lt;= 12 and moyenne > 8">
-                                                <xsl:attribute name="style">background-color: green</xsl:attribute>
-                                            </xsl:when>
-                                            <xsl:when test="moyenne &lt;= 8">
-                                                <xsl:attribute name="style">background-color: red</xsl:attribute>
-                                            </xsl:when>
-                                        </xsl:choose>
-                                        <xsl:value-of select="moyenne"/>
-                                    </td>
-                                    <xsl:if test="position() > 1">
-                                        <td style="background-color: #f4f4f4">
-                                            Voir profil
-                                        </td>
-                                    </xsl:if>
-                                </tr>
-                            </xsl:for-each>
-                        </table>
-                        </center>
-                </div>
+                        <p class="titre"> module XML</p>
+                         <center>
+                             <table border="1">
+                                 <xsl:for-each select="bulletin/etudiant">
+                                     <tr id="{numero}" onclick="redirectToProfile('{numero}', '{Nom}', '{Prénom}','{xml}'">
+                                         <td>
+                                             <xsl:if test="position() > 1">
+                                                 <xsl:value-of select="position() - 1"/>
+                                             </xsl:if>
+                                         </td>
+                                         <td><xsl:value-of select="numero"/></td>
+                                         <td><xsl:value-of select="Nom"/></td>
+                                         <td><xsl:value-of select="Prénom"/></td>
+                                         <td><xsl:value-of select="xml"/></td>
+
+                                         <!-- Utilisez la matière du professeur connecté à partir du modèle Professor -->
+
+
+
+
+
+                                     </tr>
+                                 </xsl:for-each>
+                             </table>
+                             <div style="margin-top: 20px; height: 100px;"> <!-- Ajoutez la propriété style avec height pour spécifier la hauteur en pixels -->
+                                 <form method="post" action="/generatePdf">
+                                     <input value="Generer PDF" type="submit" id="logout-btn"  ></input>
+                                 </form>
+                             </div>
+
+                         </center>
+
+                     </div>
                  </div>
 
 

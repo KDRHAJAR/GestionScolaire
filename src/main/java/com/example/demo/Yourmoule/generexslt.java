@@ -1,6 +1,6 @@
-package com.example.demo.Bulletin;
+package com.example.demo.Yourmoule;
 
-import java.util.List;
+import com.example.demo.Bulletin.transformXSLT;
 
 public class generexslt {
     public static void main(String[] args) {
@@ -9,8 +9,8 @@ public class generexslt {
 
 
         // Transformation XSLT
-        String fichierXSL = "src\\main\\resources\\FEX\\Bulletin.xsl";
-        String fichierResultatHTML = "src\\main\\resources\\templates\\Bulletin.html";
+        String fichierXSL = "src\\main\\resources\\FEX\\yourmodule.xsl";
+        String fichierResultatHTML = "src\\main\\resources\\templates\\yourmodule.html";
         transformXSLT.transformerXML( cheminFichierXML, fichierXSL, fichierResultatHTML);
     }
 }

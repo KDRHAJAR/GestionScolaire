@@ -1,4 +1,4 @@
-package com.example.demo.Affichage;
+package com.example.demo.Bulletin;
 
 import javax.xml.transform.*;
 import javax.xml.transform.stream.StreamResult;

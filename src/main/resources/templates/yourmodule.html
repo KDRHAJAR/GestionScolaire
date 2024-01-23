@@ -451,12 +451,33 @@
                     }
                 </style>
 <script>
+                    function redirectToProfile(numero, nom, prenom) {
+                    // Encode the parameters to make sure special characters are handled properly
+                    var encodedNom = encodeURIComponent(nom);
+                    var encodedPrenom = encodeURIComponent(prenom);
 
+                    window.location.href = "profile.html?selectedNumero=" + numero + "&selectedNom=" + encodedNom + "&selectedPrenom=" + encodedPrenom;
+                    }
                     function logout() {
                     // Ajoutez ici la logique de déconnexion, par exemple, redirigez vers la page de déconnexion
                     window.location.href = "login";
                     }
-
+                    function Affichage2() {
+                    // Ajoutez ici la logique de déconnexion, par exemple, redirigez vers la page de déconnexion
+                    window.location.href = "affichageS2";
+                    }
+                    function Affichage1() {
+                    // Ajoutez ici la logique de déconnexion, par exemple, redirigez vers la page de déconnexion
+                    window.location.href = "affichageS1";
+                    }
+                    function Liste() {
+                    // Ajoutez ici la logique de déconnexion, par exemple, redirigez vers la page de déconnexion
+                    window.location.href = "ListeEtud";
+                    }
+                    function Bulletin() {
+                    // Ajoutez ici la logique de déconnexion, par exemple, redirigez vers la page de déconnexion
+                    window.location.href = "Bulletin";
+                    }
 
                 </script>
 </head>
@@ -467,7 +488,7 @@
 <img alt="Logo" src="images/Ensa.png" class="logo"><span>ENSAT</span>
 </div>
 <div class="navigation-buttons">
-<div class="btn-dash1desactivate">
+<div class="btn-dash1">
 <a href="Liste">Liste &Eacute;tudiants</a>
 </div>
 <div class="btn-dash2">
@@ -479,7 +500,7 @@
 <div class="btn-dash2">
 <a href="Bulletin">Affichage Bulletin</a>
 </div>
-<div class="btn-dash1">
+<div class="btn-dash1desactivate">
 <a href="/Module">Notes des &eacute;l&egrave;ves</a>
 </div>
 </div>
@@ -490,7 +511,7 @@
 <div class="logo-container">
 <a class="opacity-5 text-dark">Pages / </a>
 <p></p>
-<strong><span>Liste</span></strong>
+<strong><span>Affichage</span></strong>
 </div>
 <button onclick="logout()" id="logout-btn">
                          Logout
@@ -498,210 +519,207 @@
 </header>
 <div class="tableint">
 <div class="container">
-<p class="titre"> Liste d'&eacute;tudiant </p>
+<p class="titre"> module XML</p>
 <center>
 <table border="1">
-<tr onclick="redirectToProfile('﻿Num&eacute;ro', 'Nom', 'Pr&eacute;nom', 'Filiere ', 'Date_Inscreption')" id="﻿Num&eacute;ro">
-<td></td><td>﻿Num&eacute;ro</td><td>Nom</td><td>Pr&eacute;nom</td><td>Filiere </td><td>Date_Inscreption</td>
+<tr onclick="redirectToProfile('', 'ABETIOU', 'SOFIANE','12.0'" id="">
+<td></td><td></td><td>ABETIOU</td><td>SOFIANE</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000773', 'ABETIOU', 'SOFIANE', 'GINF', '10/10/2020')" id="20000773">
-<td>1</td><td>20000773</td><td>ABETIOU</td><td>SOFIANE</td><td>GINF</td><td>10/10/2020</td>
+<tr onclick="redirectToProfile('', 'ACHERNAN', 'MOHAMED','6.0'" id="">
+<td>1</td><td></td><td>ACHERNAN</td><td>MOHAMED</td><td>6.0</td>
 </tr>
-<tr onclick="redirectToProfile('19001211', 'ACHERNAN', 'MOHAMED', 'GINF', '11/10/2020')" id="19001211">
-<td>2</td><td>19001211</td><td>ACHERNAN</td><td>MOHAMED</td><td>GINF</td><td>11/10/2020</td>
+<tr onclick="redirectToProfile('', 'AFOUD', 'HIND','12.0'" id="">
+<td>2</td><td></td><td>AFOUD</td><td>HIND</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('19001137', 'AFOUD', 'HIND', 'GINF', '12/10/2018')" id="19001137">
-<td>3</td><td>19001137</td><td>AFOUD</td><td>HIND</td><td>GINF</td><td>12/10/2018</td>
+<tr onclick="redirectToProfile('', 'AIT OUKHADOU', 'SELMA','12.0'" id="">
+<td>3</td><td></td><td>AIT OUKHADOU</td><td>SELMA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000734', 'AIT OUKHADOU', 'SELMA', 'GINF', '13/10/2020')" id="20000734">
-<td>4</td><td>20000734</td><td>AIT OUKHADOU</td><td>SELMA</td><td>GINF</td><td>13/10/2020</td>
+<tr onclick="redirectToProfile('', 'AKIIRNE', 'AMAL','12.0'" id="">
+<td>4</td><td></td><td>AKIIRNE</td><td>AMAL</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000761', 'AKIIRNE', 'AMAL', 'GINF', '14/10/2020')" id="20000761">
-<td>5</td><td>20000761</td><td>AKIIRNE</td><td>AMAL</td><td>GINF</td><td>14/10/2020</td>
+<tr onclick="redirectToProfile('', 'AMHAOUECH', 'WIAM','12.0'" id="">
+<td>5</td><td></td><td>AMHAOUECH</td><td>WIAM</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('19001276', 'AMHAOUECH', 'WIAM', 'GINF', '15/10/2020')" id="19001276">
-<td>6</td><td>19001276</td><td>AMHAOUECH</td><td>WIAM</td><td>GINF</td><td>15/10/2020</td>
+<tr onclick="redirectToProfile('', 'AMINE', 'TAHA','17.0'" id="">
+<td>6</td><td></td><td>AMINE</td><td>TAHA</td><td>17.0</td>
 </tr>
-<tr onclick="redirectToProfile('20001244', 'AMINE', 'TAHA', 'GINF', '16/10/2020')" id="20001244">
-<td>7</td><td>20001244</td><td>AMINE</td><td>TAHA</td><td>GINF</td><td>16/10/2020</td>
+<tr onclick="redirectToProfile('', 'ARRAB', 'HAFSA','11.0'" id="">
+<td>7</td><td></td><td>ARRAB</td><td>HAFSA</td><td>11.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000493', 'ARRAB', 'HAFSA', 'GINF', '17/10/2020')" id="20000493">
-<td>8</td><td>20000493</td><td>ARRAB</td><td>HAFSA</td><td>GINF</td><td>17/10/2020</td>
+<tr onclick="redirectToProfile('', 'BAJJI', 'AMINE','16.0'" id="">
+<td>8</td><td></td><td>BAJJI</td><td>AMINE</td><td>16.0</td>
 </tr>
-<tr onclick="redirectToProfile('20006988', 'BAJJI', 'AMINE', 'GINF', '18/10/2020')" id="20006988">
-<td>9</td><td>20006988</td><td>BAJJI</td><td>AMINE</td><td>GINF</td><td>18/10/2020</td>
+<tr onclick="redirectToProfile('', 'BENAMRI', 'AYMANE','12.0'" id="">
+<td>9</td><td></td><td>BENAMRI</td><td>AYMANE</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20007078', 'BENAMRI', 'AYMANE', 'GINF', '19/10/2020')" id="20007078">
-<td>10</td><td>20007078</td><td>BENAMRI</td><td>AYMANE</td><td>GINF</td><td>19/10/2020</td>
+<tr onclick="redirectToProfile('', 'BENATTOU', 'IHSANE','12.0'" id="">
+<td>10</td><td></td><td>BENATTOU</td><td>IHSANE</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000758', 'BENATTOU', 'IHSANE', 'GINF', '20/10/2020')" id="20000758">
-<td>11</td><td>20000758</td><td>BENATTOU</td><td>IHSANE</td><td>GINF</td><td>20/10/2020</td>
+<tr onclick="redirectToProfile('', 'BENATTOU', 'IMANE','12.0'" id="">
+<td>11</td><td></td><td>BENATTOU</td><td>IMANE</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000757', 'BENATTOU', 'IMANE', 'GINF', '21/10/2020')" id="20000757">
-<td>12</td><td>20000757</td><td>BENATTOU</td><td>IMANE</td><td>GINF</td><td>21/10/2020</td>
+<tr onclick="redirectToProfile('', 'BENTOUFILE', 'OUSSAMA','12.0'" id="">
+<td>12</td><td></td><td>BENTOUFILE</td><td>OUSSAMA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('19002165', 'BENTOUFILE', 'OUSSAMA', 'GINF', '22/10/2020')" id="19002165">
-<td>13</td><td>19002165</td><td>BENTOUFILE</td><td>OUSSAMA</td><td>GINF</td><td>22/10/2020</td>
+<tr onclick="redirectToProfile('', 'BOUALI', 'MAROUA','12.0'" id="">
+<td>13</td><td></td><td>BOUALI</td><td>MAROUA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000730', 'BOUALI', 'MAROUA', 'GINF', '23/10/2020')" id="20000730">
-<td>14</td><td>20000730</td><td>BOUALI</td><td>MAROUA</td><td>GINF</td><td>23/10/2020</td>
+<tr onclick="redirectToProfile('', 'BOUKTAIB', 'SOUFIAN','16.0'" id="">
+<td>14</td><td></td><td>BOUKTAIB</td><td>SOUFIAN</td><td>16.0</td>
 </tr>
-<tr onclick="redirectToProfile('20002424', 'BOUKTAIB', 'SOUFIAN', 'GINF', '24/10/2020')" id="20002424">
-<td>15</td><td>20002424</td><td>BOUKTAIB</td><td>SOUFIAN</td><td>GINF</td><td>24/10/2020</td>
+<tr onclick="redirectToProfile('', 'BOULAID', 'SARA','10.0'" id="">
+<td>15</td><td></td><td>BOULAID</td><td>SARA</td><td>10.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000771', 'BOULAID', 'SARA', 'GINF', '25/10/2019')" id="20000771">
-<td>16</td><td>20000771</td><td>BOULAID</td><td>SARA</td><td>GINF</td><td>25/10/2019</td>
+<tr onclick="redirectToProfile('', 'CHANAA', 'AIMANE','12.0'" id="">
+<td>16</td><td></td><td>CHANAA</td><td>AIMANE</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20007025', 'CHANAA', 'AIMANE', 'GINF', '26/10/2020')" id="20007025">
-<td>17</td><td>20007025</td><td>CHANAA</td><td>AIMANE</td><td>GINF</td><td>26/10/2020</td>
+<tr onclick="redirectToProfile('', 'CHATT', 'ANAS','13.0'" id="">
+<td>17</td><td></td><td>CHATT</td><td>ANAS</td><td>13.0</td>
 </tr>
-<tr onclick="redirectToProfile('20007161', 'CHATT', 'ANAS', 'GINF', '27/10/2020')" id="20007161">
-<td>18</td><td>20007161</td><td>CHATT</td><td>ANAS</td><td>GINF</td><td>27/10/2020</td>
+<tr onclick="redirectToProfile('', 'DAHRABOU', 'DOHA','13.0'" id="">
+<td>18</td><td></td><td>DAHRABOU</td><td>DOHA</td><td>13.0</td>
 </tr>
-<tr onclick="redirectToProfile('20004313', 'DAHRABOU', 'DOHA', 'GINF', '28/10/2020')" id="20004313">
-<td>19</td><td>20004313</td><td>DAHRABOU</td><td>DOHA</td><td>GINF</td><td>28/10/2020</td>
+<tr onclick="redirectToProfile('', 'DAOUDI', 'AYA','12.0'" id="">
+<td>19</td><td></td><td>DAOUDI</td><td>AYA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20007051', 'DAOUDI', 'AYA', 'GINF', '29/10/2020')" id="20007051">
-<td>20</td><td>20007051</td><td>DAOUDI</td><td>AYA</td><td>GINF</td><td>29/10/2020</td>
+<tr onclick="redirectToProfile('', 'ECHBERAAL', 'ANASS','12.0'" id="">
+<td>20</td><td></td><td>ECHBERAAL</td><td>ANASS</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20002432', 'ECHBERAAL', 'ANASS', 'GINF', '30/10/2019')" id="20002432">
-<td>21</td><td>20002432</td><td>ECHBERAAL</td><td>ANASS</td><td>GINF</td><td>30/10/2019</td>
+<tr onclick="redirectToProfile('', 'EL AALOUCH', 'MOHAMMED YASSINE','16.0'" id="">
+<td>21</td><td></td><td>EL AALOUCH</td><td>MOHAMMED YASSINE</td><td>16.0</td>
 </tr>
-<tr onclick="redirectToProfile('20002251', 'EL AALOUCH', 'MOHAMMED YASSINE', 'GINF', '31/10/2020')" id="20002251">
-<td>22</td><td>20002251</td><td>EL AALOUCH</td><td>MOHAMMED YASSINE</td><td>GINF</td><td>31/10/2020</td>
+<tr onclick="redirectToProfile('', 'EL ASSIRI', 'AHLAM','12.0'" id="">
+<td>22</td><td></td><td>EL ASSIRI</td><td>AHLAM</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20002670', 'EL ASSIRI', 'AHLAM', 'GINF', '01/11/2020')" id="20002670">
-<td>23</td><td>20002670</td><td>EL ASSIRI</td><td>AHLAM</td><td>GINF</td><td>01/11/2020</td>
+<tr onclick="redirectToProfile('', 'EL AZOUAN', 'AYA','12.0'" id="">
+<td>23</td><td></td><td>EL AZOUAN</td><td>AYA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000742', 'EL AZOUAN', 'AYA', 'GINF', '02/11/2020')" id="20000742">
-<td>24</td><td>20000742</td><td>EL AZOUAN</td><td>AYA</td><td>GINF</td><td>02/11/2020</td>
+<tr onclick="redirectToProfile('', 'EL BAGHDADI', 'NADA','19.0'" id="">
+<td>24</td><td></td><td>EL BAGHDADI</td><td>NADA</td><td>19.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000741', 'EL BAGHDADI', 'NADA', 'GINF', '03/11/2020')" id="20000741">
-<td>25</td><td>20000741</td><td>EL BAGHDADI</td><td>NADA</td><td>GINF</td><td>03/11/2020</td>
+<tr onclick="redirectToProfile('', 'EL BARAKA', 'NOUHAILA','12.0'" id="">
+<td>25</td><td></td><td>EL BARAKA</td><td>NOUHAILA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000775', 'EL BARAKA', 'NOUHAILA', 'GINF', '04/11/2020')" id="20000775">
-<td>26</td><td>20000775</td><td>EL BARAKA</td><td>NOUHAILA</td><td>GINF</td><td>04/11/2020</td>
+<tr onclick="redirectToProfile('', 'EL FERCHOUNI', 'SOUKAYNA','12.0'" id="">
+<td>26</td><td></td><td>EL FERCHOUNI</td><td>SOUKAYNA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20007042', 'EL FERCHOUNI', 'SOUKAYNA', 'GINF', '05/11/2020')" id="20007042">
-<td>27</td><td>20007042</td><td>EL FERCHOUNI</td><td>SOUKAYNA</td><td>GINF</td><td>05/11/2020</td>
+<tr onclick="redirectToProfile('', 'EL FICH', 'RIHAB','12.0'" id="">
+<td>27</td><td></td><td>EL FICH</td><td>RIHAB</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('19001439', 'EL FICH', 'RIHAB', 'GINF', '06/11/2020')" id="19001439">
-<td>28</td><td>19001439</td><td>EL FICH</td><td>RIHAB</td><td>GINF</td><td>06/11/2020</td>
+<tr onclick="redirectToProfile('', 'EL GAID', 'MUSTAPHA','12.0'" id="">
+<td>28</td><td></td><td>EL GAID</td><td>MUSTAPHA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('19002131', 'EL GAID', 'MUSTAPHA', 'GINF', '07/11/2020')" id="19002131">
-<td>29</td><td>19002131</td><td>EL GAID</td><td>MUSTAPHA</td><td>GINF</td><td>07/11/2020</td>
+<tr onclick="redirectToProfile('', 'EL HABTI', 'NAJOUA','12.0'" id="">
+<td>29</td><td></td><td>EL HABTI</td><td>NAJOUA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000780', 'EL HABTI', 'NAJOUA', 'GINF', '08/11/2020')" id="20000780">
-<td>30</td><td>20000780</td><td>EL HABTI</td><td>NAJOUA</td><td>GINF</td><td>08/11/2020</td>
+<tr onclick="redirectToProfile('', 'EL HADDAD', 'MOHAMED','12.0'" id="">
+<td>30</td><td></td><td>EL HADDAD</td><td>MOHAMED</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20003925', 'EL HADDAD', 'MOHAMED', 'GINF', '09/11/2020')" id="20003925">
-<td>31</td><td>20003925</td><td>EL HADDAD</td><td>MOHAMED</td><td>GINF</td><td>09/11/2020</td>
+<tr onclick="redirectToProfile('', 'EL HARIRI', 'KENZA','12.0'" id="">
+<td>31</td><td></td><td>EL HARIRI</td><td>KENZA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('19006658', 'EL HARIRI', 'KENZA', 'GINF', '10/11/2020')" id="19006658">
-<td>32</td><td>19006658</td><td>EL HARIRI</td><td>KENZA</td><td>GINF</td><td>10/11/2020</td>
+<tr onclick="redirectToProfile('', 'EL HARRACHY', 'ABDERRAHMANE','12.0'" id="">
+<td>32</td><td></td><td>EL HARRACHY</td><td>ABDERRAHMANE</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000755', 'EL HARRACHY', 'ABDERRAHMANE', 'GINF', '11/11/2020')" id="20000755">
-<td>33</td><td>20000755</td><td>EL HARRACHY</td><td>ABDERRAHMANE</td><td>GINF</td><td>11/11/2020</td>
+<tr onclick="redirectToProfile('', 'EL MAFTOUHI', 'BILAL','12.0'" id="">
+<td>33</td><td></td><td>EL MAFTOUHI</td><td>BILAL</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000716', 'EL MAFTOUHI', 'BILAL', 'GINF', '12/11/2020')" id="20000716">
-<td>34</td><td>20000716</td><td>EL MAFTOUHI</td><td>BILAL</td><td>GINF</td><td>12/11/2020</td>
+<tr onclick="redirectToProfile('', 'EL MAIMOUNI', 'MOHAMED AMINE','12.0'" id="">
+<td>34</td><td></td><td>EL MAIMOUNI</td><td>MOHAMED AMINE</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('18008815', 'EL MAIMOUNI', 'MOHAMED AMINE', 'GINF', '13/11/2020')" id="18008815">
-<td>35</td><td>18008815</td><td>EL MAIMOUNI</td><td>MOHAMED AMINE</td><td>GINF</td><td>13/11/2020</td>
+<tr onclick="redirectToProfile('', 'EL MOUMOUHI', 'HOUDA','12.0'" id="">
+<td>35</td><td></td><td>EL MOUMOUHI</td><td>HOUDA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20006989', 'EL MOUMOUHI', 'HOUDA', 'GINF', '14/11/2020')" id="20006989">
-<td>36</td><td>20006989</td><td>EL MOUMOUHI</td><td>HOUDA</td><td>GINF</td><td>14/11/2020</td>
+<tr onclick="redirectToProfile('', 'EL OMARI', 'IMANE','12.0'" id="">
+<td>36</td><td></td><td>EL OMARI</td><td>IMANE</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20007067', 'EL OMARI', 'IMANE', 'GINF', '15/11/2020')" id="20007067">
-<td>37</td><td>20007067</td><td>EL OMARI</td><td>IMANE</td><td>GINF</td><td>15/11/2020</td>
+<tr onclick="redirectToProfile('', 'EL YAMLAHI', 'AICHA','12.0'" id="">
+<td>37</td><td></td><td>EL YAMLAHI</td><td>AICHA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('19001413', 'EL YAMLAHI', 'AICHA', 'GINF', '16/11/2020')" id="19001413">
-<td>38</td><td>19001413</td><td>EL YAMLAHI</td><td>AICHA</td><td>GINF</td><td>16/11/2020</td>
+<tr onclick="redirectToProfile('', 'EL YAZGHI', 'MARYEM','12.0'" id="">
+<td>38</td><td></td><td>EL YAZGHI</td><td>MARYEM</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('17004026', 'EL YAZGHI', 'MARYEM', 'GINF', '17/11/2020')" id="17004026">
-<td>39</td><td>17004026</td><td>EL YAZGHI</td><td>MARYEM</td><td>GINF</td><td>17/11/2020</td>
+<tr onclick="redirectToProfile('', 'ENNAJARI', 'OUMAIMA','12.0'" id="">
+<td>39</td><td></td><td>ENNAJARI</td><td>OUMAIMA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000759', 'ENNAJARI', 'OUMAIMA', 'GINF', '18/11/2020')" id="20000759">
-<td>40</td><td>20000759</td><td>ENNAJARI</td><td>OUMAIMA</td><td>GINF</td><td>18/11/2020</td>
+<tr onclick="redirectToProfile('', 'ESSAIH', 'ASMAE','12.0'" id="">
+<td>40</td><td></td><td>ESSAIH</td><td>ASMAE</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('19005693', 'ESSAIH', 'ASMAE', 'GINF', '19/11/2020')" id="19005693">
-<td>41</td><td>19005693</td><td>ESSAIH</td><td>ASMAE</td><td>GINF</td><td>19/11/2020</td>
+<tr onclick="redirectToProfile('', 'FAROUK', 'ZAKARIA','12.0'" id="">
+<td>41</td><td></td><td>FAROUK</td><td>ZAKARIA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('19005680', 'FAROUK', 'ZAKARIA', 'GINF', '20/11/2020')" id="19005680">
-<td>42</td><td>19005680</td><td>FAROUK</td><td>ZAKARIA</td><td>GINF</td><td>20/11/2020</td>
+<tr onclick="redirectToProfile('', 'GLIOUAL', 'YASSINE','12.0'" id="">
+<td>42</td><td></td><td>GLIOUAL</td><td>YASSINE</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000777', 'GLIOUAL', 'YASSINE', 'GINF', '21/11/2020')" id="20000777">
-<td>43</td><td>20000777</td><td>GLIOUAL</td><td>YASSINE</td><td>GINF</td><td>21/11/2020</td>
+<tr onclick="redirectToProfile('', 'GOMAIRI', 'HAMZA','12.0'" id="">
+<td>43</td><td></td><td>GOMAIRI</td><td>HAMZA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('19005656', 'GOMAIRI', 'HAMZA', 'GINF', '22/11/2020')" id="19005656">
-<td>44</td><td>19005656</td><td>GOMAIRI</td><td>HAMZA</td><td>GINF</td><td>22/11/2020</td>
+<tr onclick="redirectToProfile('', 'HAJI', 'OTMANE','12.0'" id="">
+<td>44</td><td></td><td>HAJI</td><td>OTMANE</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('19006584', 'HAJI', 'OTMANE', 'GINF', '23/11/2020')" id="19006584">
-<td>45</td><td>19006584</td><td>HAJI</td><td>OTMANE</td><td>GINF</td><td>23/11/2020</td>
+<tr onclick="redirectToProfile('', 'HAMDAN', 'KARIMA','12.0'" id="">
+<td>45</td><td></td><td>HAMDAN</td><td>KARIMA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20002433', 'HAMDAN', 'KARIMA', 'GINF', '24/11/2020')" id="20002433">
-<td>46</td><td>20002433</td><td>HAMDAN</td><td>KARIMA</td><td>GINF</td><td>24/11/2020</td>
+<tr onclick="redirectToProfile('', 'HARRAK', 'YOUSSEF','12.0'" id="">
+<td>46</td><td></td><td>HARRAK</td><td>YOUSSEF</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20002532', 'HARRAK', 'YOUSSEF', 'GINF', '25/11/2020')" id="20002532">
-<td>47</td><td>20002532</td><td>HARRAK</td><td>YOUSSEF</td><td>GINF</td><td>25/11/2020</td>
+<tr onclick="redirectToProfile('', 'HAYAOUI', 'MOUAD','12.0'" id="">
+<td>47</td><td></td><td>HAYAOUI</td><td>MOUAD</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000763', 'HAYAOUI', 'MOUAD', 'GINF', '26/11/2020')" id="20000763">
-<td>48</td><td>20000763</td><td>HAYAOUI</td><td>MOUAD</td><td>GINF</td><td>26/11/2020</td>
+<tr onclick="redirectToProfile('', 'HIMMI', 'HAJAR','12.0'" id="">
+<td>48</td><td></td><td>HIMMI</td><td>HAJAR</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000740', 'HIMMI', 'HAJAR', 'GINF', '27/11/2020')" id="20000740">
-<td>49</td><td>20000740</td><td>HIMMI</td><td>HAJAR</td><td>GINF</td><td>27/11/2020</td>
+<tr onclick="redirectToProfile('', 'IDRISSI', 'YASSINE','12.0'" id="">
+<td>49</td><td></td><td>IDRISSI</td><td>YASSINE</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20002137', 'IDRISSI', 'YASSINE', 'GINF', '28/11/2020')" id="20002137">
-<td>50</td><td>20002137</td><td>IDRISSI</td><td>YASSINE</td><td>GINF</td><td>28/11/2020</td>
+<tr onclick="redirectToProfile('', 'JAADA', 'ZAHAIRA','12.0'" id="">
+<td>50</td><td></td><td>JAADA</td><td>ZAHAIRA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20006985', 'JAADA', 'ZAHAIRA', 'GINF', '29/11/2020')" id="20006985">
-<td>51</td><td>20006985</td><td>JAADA</td><td>ZAHAIRA</td><td>GINF</td><td>29/11/2020</td>
+<tr onclick="redirectToProfile('', 'KACHAR', 'NABIL','12.0'" id="">
+<td>51</td><td></td><td>KACHAR</td><td>NABIL</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20002554', 'KACHAR', 'NABIL', 'GINF', '30/11/2020')" id="20002554">
-<td>52</td><td>20002554</td><td>KACHAR</td><td>NABIL</td><td>GINF</td><td>30/11/2020</td>
+<tr onclick="redirectToProfile('', 'KDIDAR', 'HAJAR','12.0'" id="">
+<td>52</td><td></td><td>KDIDAR</td><td>HAJAR</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20009742', 'KDIDAR', 'HAJAR', 'GINF', '01/12/2020')" id="20009742">
-<td>53</td><td>20009742</td><td>KDIDAR</td><td>HAJAR</td><td>GINF</td><td>01/12/2020</td>
+<tr onclick="redirectToProfile('', 'KEFFAOUI', 'NOHA','12.0'" id="">
+<td>53</td><td></td><td>KEFFAOUI</td><td>NOHA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('19006706', 'KEFFAOUI', 'NOHA', 'GINF', '02/12/2020')" id="19006706">
-<td>54</td><td>19006706</td><td>KEFFAOUI</td><td>NOHA</td><td>GINF</td><td>02/12/2020</td>
+<tr onclick="redirectToProfile('', 'KHALLOUFI', 'AYA','12.0'" id="">
+<td>54</td><td></td><td>KHALLOUFI</td><td>AYA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20006930', 'KHALLOUFI', 'AYA', 'GINF', '03/12/2020')" id="20006930">
-<td>55</td><td>20006930</td><td>KHALLOUFI</td><td>AYA</td><td>GINF</td><td>03/12/2020</td>
+<tr onclick="redirectToProfile('', 'LAABADI', 'HOUDA','12.0'" id="">
+<td>55</td><td></td><td>LAABADI</td><td>HOUDA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000754', 'LAABADI', 'HOUDA', 'GINF', '04/12/2020')" id="20000754">
-<td>56</td><td>20000754</td><td>LAABADI</td><td>HOUDA</td><td>GINF</td><td>04/12/2020</td>
+<tr onclick="redirectToProfile('', 'LAHOIENI', 'ABDERRAHIM','12.0'" id="">
+<td>56</td><td></td><td>LAHOIENI</td><td>ABDERRAHIM</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('19002804', 'LAHOIENI', 'ABDERRAHIM', 'GINF', '05/12/2020')" id="19002804">
-<td>57</td><td>19002804</td><td>LAHOIENI</td><td>ABDERRAHIM</td><td>GINF</td><td>05/12/2020</td>
+<tr onclick="redirectToProfile('', 'LAKRAMAT', 'HASNAE','12.0'" id="">
+<td>57</td><td></td><td>LAKRAMAT</td><td>HASNAE</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('19001375', 'LAKRAMAT', 'HASNAE', 'GINF', '06/12/2019')" id="19001375">
-<td>58</td><td>19001375</td><td>LAKRAMAT</td><td>HASNAE</td><td>GINF</td><td>06/12/2019</td>
+<tr onclick="redirectToProfile('', 'MOUNTASSIR', 'REDA','12.0'" id="">
+<td>58</td><td></td><td>MOUNTASSIR</td><td>REDA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000731', 'MOUNTASSIR', 'REDA', 'GINF', '07/12/2020')" id="20000731">
-<td>59</td><td>20000731</td><td>MOUNTASSIR</td><td>REDA</td><td>GINF</td><td>07/12/2020</td>
+<tr onclick="redirectToProfile('', 'NAYMA', 'OMAYMA','12.0'" id="">
+<td>59</td><td></td><td>NAYMA</td><td>OMAYMA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000513', 'NAYMA', 'OMAYMA', 'GINF', '08/12/2020')" id="20000513">
-<td>60</td><td>20000513</td><td>NAYMA</td><td>OMAYMA</td><td>GINF</td><td>08/12/2020</td>
+<tr onclick="redirectToProfile('', 'RANBOUK', 'LAMIAE','12.0'" id="">
+<td>60</td><td></td><td>RANBOUK</td><td>LAMIAE</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20007695', 'RANBOUK', 'LAMIAE', 'GINF', '09/12/2020')" id="20007695">
-<td>61</td><td>20007695</td><td>RANBOUK</td><td>LAMIAE</td><td>GINF</td><td>09/12/2020</td>
+<tr onclick="redirectToProfile('', 'RAYES', 'ABDELKOUDOUS','12.0'" id="">
+<td>61</td><td></td><td>RAYES</td><td>ABDELKOUDOUS</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('19006284', 'RAYES', 'ABDELKOUDOUS', 'GINF', '10/12/2020')" id="19006284">
-<td>62</td><td>19006284</td><td>RAYES</td><td>ABDELKOUDOUS</td><td>GINF</td><td>10/12/2020</td>
+<tr onclick="redirectToProfile('', 'SAMADI', 'IMAD','12.0'" id="">
+<td>62</td><td></td><td>SAMADI</td><td>IMAD</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20000721', 'SAMADI', 'IMAD', 'GINF', '11/12/2020')" id="20000721">
-<td>63</td><td>20000721</td><td>SAMADI</td><td>IMAD</td><td>GINF</td><td>11/12/2020</td>
+<tr onclick="redirectToProfile('', 'ZAOUI', 'OUSSAMA','12.0'" id="">
+<td>63</td><td></td><td>ZAOUI</td><td>OUSSAMA</td><td>12.0</td>
 </tr>
-<tr onclick="redirectToProfile('20002123', 'ZAOUI', 'OUSSAMA', 'GINF', '12/12/2020')" id="20002123">
-<td>64</td><td>20002123</td><td>ZAOUI</td><td>OUSSAMA</td><td>GINF</td><td>12/12/2020</td>
-</tr>
-<tr onclick="redirectToProfile('20000491', 'ZOUAKI', 'MARIA', 'GINF', '13/12/2020')" id="20000491">
-<td>65</td><td>20000491</td><td>ZOUAKI</td><td>MARIA</td><td>GINF</td><td>13/12/2020</td>
+<tr onclick="redirectToProfile('', 'ZOUAKI', 'MARIA','12.0'" id="">
+<td>64</td><td></td><td>ZOUAKI</td><td>MARIA</td><td>12.0</td>
 </tr>
 </table>
 <div style="margin-top: 20px; height: 100px;">
-<form action="/generatePdfliste" method="post">
+<form action="/generatePdf" method="post">
 <input id="logout-btn" type="submit" value="Generer PDF">
 </form>
 </div>
